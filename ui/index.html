@@ -1,28 +1,33 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>seajro</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="./javascript/script.js"></script>
-  </head>
-  <body>
-    <nav class="nav_bar">
-      <p>seajro</p>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>seajro</title>
 
-      <form>
-        <div>
-          <input
-            type="search"
-            id="mySearch"
-            name="q"
-            placeholder="Search the city…" />
-          <button>Search</button>
-        </div>
-      </form>
-    </nav>
+	<!-- Bootstrape CSS -->
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
 
-    <div id="page_content">
+	<!-- styles -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+	<header>
+		<nav class="navbar bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">SEAJRO</a>
+				<form class="d-flex" role="search">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+				<a class="navbar-brand user-icon" href="#"><img src="./img/profile-user.png" alt=""></a>
+			</div>
+		</nav>
+	</header>
+
+	<div id="page_content">
       <div id="weather_and_event">
         <div id="temperature_info"></div>
         <div id="google_calender"></div>
@@ -36,5 +41,5 @@
     </div>
 
     <footer></footer>
-  </body>
+</body>
 </html>
