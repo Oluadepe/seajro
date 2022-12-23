@@ -47,4 +47,5 @@ async function getWeather() {
 /*Return a list of different weather condition and it unit measurements*/
 const weather = getWeather();
 
-document.getElementById("")
+= document.getElementById("card-body");
+updatePageInfo.innerHTML = weather["country_code"], weather["city"];
