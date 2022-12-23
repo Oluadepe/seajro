@@ -3,43 +3,102 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>seajro</title>
+	<title>weather</title>
 
-	<!-- Bootstrape CSS -->
+<!-- External css styling links -->
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
-
-	<!-- styles -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+
+<!-- Inline css styling for overriding boostrape style-->
+	<style>
+		/*styling the navBar Logo*/
+		.navbar-brand{
+			font-size: 30px;
+			font-weight: bolder;
+		}
+		.card{
+			width: 100%;
+			margin: 10px auto;
+			padding: 5px;
+		}
+	</style>
 
 </head>
 <body>
+	<div id="mobview" class="container">
 
-	<header>
-		<nav class="navbar bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">SEAJRO</a>
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
-				<a class="navbar-brand user-icon" href="#"><img src="./img/profile-user.png" alt=""></a>
+<!--This is the navigation bar for Logo and SearchBar -->
+		<header>
+			<nav class="navbar bg-light style=background-color: #e3f2fd;">
+				<div class="container-fluid">
+					<a class="navbar-brand display-7" href="#">SEAJRO</a>
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+				</div>
+			</nav>
+		</header>
+
+<!--Grid template page content layout for the temperature and favourite -->
+		<div class="row">
+
+			<div class="col-12 col-md-8">
+				<div class="jumbotron">
+					<h1 id="cityName" class="display-6">Lagos, Nigeria</h1>
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Temperature</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" id="fav-wed" class="btn btn-primary btn-sm">Add to Favourite</a>
+						</div>
+					</div>
+					<div class="card" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">Temperature</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" id="fav-wed" class="btn btn-primary btn-sm">Add to Favourite</a>
+						</div>
+					</div>
+					<hr class="my-4">
+					<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+					<p class="lead">
+						<a class="btn btn-primary btn-sm" href="#" role="button">Add Event to Calender</a>
+					</p>
+				</div>
 			</div>
-		</nav>
-	</header>
 
-	<div id="page_content">
-      <div id="weather_and_event">
-        <div id="temperature_info"></div>
-        <div id="google_calender"></div>
-        <div id="weather_news"></div>
-      </div>
+			<div class="col-6 col-md-4">
+				<div class="jumbotron">
+					<h1 class="display-6">Favourite</h1>
+					<ul class="list-group">
+						<li class="list-group-item">Cairo, Egypt</li>
+						<li class="list-group-item">Nairobi, Kenya</li>
+						<li class="list-group-item">Arizona, United State</li>
+						<li class="list-group-item">Lisbon, Portugal</li>
+						<li class="list-group-item">Kano, Nigeria</li>
+						<li class="list-group-item">Hamburg, Germany</li>
+						<li class="list-group-item">Abuja, Nigeria</li>
+						<li class="list-group-item">Abijan, Ivory Coast</li>
+					</ul>
+					<a class="btn btn-danger btn-sm" href="#" role="button">Remove Favourite</a>
+				</div>
+			</div>
+		</div>
 
-      <div id="favourite_and_loop">
-        <div id="feedback_loop"></div>
-        <div id="favourite"></div>
-      </div>
-    </div>
+<!--This is the weather news are, it is in a separate Jumbotron -->
+		<div id="news-field" class="jumbotron-fluid">
+			<h1 id="display-4" class="display-6">Weather News</h1>
+			<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis id est ut semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec vulputate vehicula vehicula. Duis a fermentum ante. Ut non risus cursus, iaculis nisl ut, tincidunt est. Duis ornare ullamcorper ornare. Ut vitae odio ac augue vestibulum tempor. Vestibulum eu neque consequat, sollicitudin neque pulvinar, lobortis felis. In hendrerit massa felis, eu dapibus turpis porttitor eget. Phasellus et lorem pharetra dui imperdiet ultricies vel finibus sapien.
 
-    <footer></footer>
+			Integer nisl sapien, eleifend id vestibulum sit amet, luctus sit amet elit. .</p>
+			<hr class="my-4">
+		</div>
+
+<!--Start of the footer navigation -->
+		<footer></footer>
+	</div>
+
 </body>
 </html>

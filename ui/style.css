@@ -1,6 +1,21 @@
-.user-icon img {
-  margin: 0px;
-  padding-left: 0;
-  width: 25px;
-  height: 25px;
+#mobview {
+	width: 900px;
+	border: solid 0.5px green;
+	border-radius: 10px;
+}
+
+#news-field {
+	width: 100%;
+	margin-top: 35px;
+}
+
+#news-field > h1 {
+	padding: 5px 0 5px 0;
+	text-align: center;
+}
+
+#display-4 {
+	background-color: lightgrey;
+	margin: 0;
+	padding: 0;
 }
