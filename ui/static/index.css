@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ==========================
+        Typography
+========================== */
+
+.logo {
+    font-family: 'Shrikhand', cursive;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+}
+
+.rate {
+    font-weight: 700;
+}
+
+.options p {
+    margin: 0;
+}
+
+.temp {
+    font-size: 4rem;
+}
+
+/* ==========================
+        Layout
+========================== */
+
+header, footer {
+    background-color: rgb(110, 110, 213);
+    padding: .5em 2em;
+}
+
+main {
+    width: 80%;
+    margin: 3em auto;
+}
+
+header, .weatherData,
+.weatherInfo, .info,
+.calendarHolder, .options, 
+nav, .temp-box, .rate,
+.btn-fav, .temp-btn {
+    display: flex;
+}
+
+.calendarHolder,
+.temp-btn {
+    flex-direction: column;
+}
+
+button {
+    background-color: rgb(110, 110, 213);
+    padding: 1em;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.btn-evt {
+    width: 50%;
+    margin: auto auto 0 auto;
+}
+
+header, .options,
+.temp-box {
+    align-items: center;
+}
+
+header, .weatherData,
+.weatherInfo, .info,
+nav, .options,
+.temp-box, .rate,
+.btn-fav {
+    justify-content: space-between;
+}
+
+.weatherData {
+    margin-bottom: 4em;
+}
+
+.btn-fav button {
+    width: 48%;
+}
+
+i {
+    vertical-align: middle;
+}
+
+.temp-box, .rate {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.box{
+    width: 30%;
+    box-shadow: 2px 2px 6px black;
+    padding: 1em;
+}
+
+.card, 
+.options select {
+    width: 65%;
+}
+
+.places, .news,
+.calendarHolder {
+    box-shadow: 2px 2px 6px black;
+    padding: 1em;
+}
+
+.places, nav,
+.calendarHolder {
+    width: 48%;
+}
+
+nav input {
+    width: 75%;
+    border-radius: 50px;
+    border: 0;
+}
+
+input,
+select {
+    padding: .7em;
+    border: 1px solid gray;
+}
+
+input:hover,
+input:focus,
+button:hover,
+button:focus {
+    background-color: rgb(152, 152, 248);
+    color: black;
+}
+
+.avatar {
+    width: 18%;
+}
+
+.avatar img {
+    width: 40%;
+    float: right;
+    border-radius: 50px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* ==========================
+       Media Query
+========================== */
+
+@media (max-width: 600px) {
+    .weatherData, .info,
+    .weatherInfo,
+    header {
+        flex-direction: column;
+    }
+
+    main, nav {
+        width: 95%;
+    }
+
+    .card, .box,
+    .places, .calendarHolder{
+        width: 95%;
+        margin: 1em auto;
+    }
+
+    .avatar img {
+        width: 100%;
+    }
+
+    .calendarHolder {
+        height: 60vh;
+    }
+}
