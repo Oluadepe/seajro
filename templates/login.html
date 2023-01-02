@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+    <!-- Custom Theme files -->
+    <link href="../static/login.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+{% endblock %}
+
+{% block content %}
+    <div class="main-w3layouts wrapper">
+      <h1>Login</h1>
+      <div class="main-agileinfo">
+        <div class="agileits-top">
+          <form action="#" method="post">
+            <input class="text email" type="email" name="email" placeholder="Email" required="">
+            <input class="text" type="password" name="password" placeholder="Password" required="">
+            <div class="wthree-text">
+              <label class="anim">
+                <input type="checkbox" class="checkbox" required="">
+                <span>Remember me</span>
+              </label>
+              <div class="clear"> </div>
+            </div>
+            <input type="submit" value="LOGIN">
+          </form>
+          <p>Don't have an Account? <a href="signup">Create Account</a></p>
+        </div>
+      </div>
+      <!-- copyright -->
+      <div class="colorlibcopy-agile">
+        <p>© 2022 ALX Portfolio Project. All rights reserved<a href="https://seajro.com/" target="#"></a></p>
+      </div>
+    </div>
+{% endblock %}
