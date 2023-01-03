@@ -69,6 +69,7 @@ def signin():
         user = storage.retrieve(User, email).values()
         if user['password'] == password:
             session['logged_in'] = True
+            session['user_email'] = email
             flash('You have been logged in')
             return redirect(url_for('user'))
         else:
