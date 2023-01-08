@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -8,18 +11,20 @@ body {
     padding: 0;
     margin: 0;
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* ==========================
         Typography
 ========================== */
 
-.logo {
-    font-family: 'Shrikhand', cursive;
-    color: white;
+.logo a {
+    font-family: 'Monoton', cursive;
+    color: ivory;
+    background-color: rgb(62, 190, 51);
+    text-decoration-line: none;
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 36px;
 }
 
 .rate {
@@ -39,8 +44,12 @@ body {
 ========================== */
 
 header, footer {
-    background-color: rgb(110, 110, 213);
+    background-color: rgb(62, 190, 51);
     padding: .5em 2em;
+}
+
+footer {
+    margin-bottom: 0;
 }
 
 main {
@@ -62,7 +71,7 @@ nav, .temp-box, .rate,
 }
 
 button {
-    background-color: rgb(110, 110, 213);
+    background-color: #0d6efd;
     padding: 1em;
     border: 0;
     color: white;
@@ -112,6 +121,14 @@ i {
     padding: 1em;
 }
 
+.box h3 {
+    text-align: center;
+}
+
+section.card.news h2 {
+    text-align: center;
+}
+
 .card,
 .options select {
     width: 65%;
@@ -126,6 +143,11 @@ i {
 .places, nav,
 .calendarHolder {
     width: 48%;
+}
+
+.places p,
+#time {
+    font-family: 'Rubik Gemstones', cursive;
 }
 
 nav input {
@@ -163,6 +185,8 @@ footer {
     text-align: center;
     padding: 1em;
 }
+
+
 
 /* ==========================
        Media Query

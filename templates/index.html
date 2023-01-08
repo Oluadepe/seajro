@@ -1,59 +1,67 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <main>
-        <div class="weatherData">
-            <div class="card info">
-                <div class="places">
-                    <p>Nigeria<i class="ri-arrow-right-s-line"></i>
-                    <span>Lagos <i class="ri-arrow-right-s-line"></i></span> <span>Ikoyi</span></p>
-                    <div class="options">
+<main>
+    <div class="weatherData">
+        <div class="card info">
+            <div class="places">
+                <p>Lagos, Nigeria</p>
+                <div class="options">
                     <select name="dataInfo" id="dataInfo">
                         <option value="Temperature">Temperature</option>
                         <option value="Humidity">Humidity</option>
                         <option value="Rainfall">Rainfall</option>
                     </select>
-                    <p id="time">8.00</p>
+                    <p id="time"></p>
                 </div>
                 <div class="temp-box">
-                    <h1 class="temp">27º</h1>
+                    <h1 class="temp">27 º</h1>
                     <div class="temp-btn">
-                    <button>C</button>
-                    <button>F</button>
-                </div>
+                        <button>C</button>
+                        <button>F</button>
+                    </div>
                 </div>
                 <div class="rate">
                     <p>31 <i class="ri-arrow-up-line"></i></p>
                     <p>25 <i class="ri-arrow-down-line"></i></p>
                 </div>
-                    <div class="btn-fav">
-                        <button>Favorite 🧡</button>
-                        <button>Remove 🤍</button>
-                    </div>
-                </div>
-                <div class="calendarHolder">
-                    <input type="text" id="forDate" placeholder="Pick a date">
-                    <button class="btn-evt">Add an event</button>
+                <div class="btn-fav">
+                    <button>Favorite 🧡</button>
+                    <button>Remove 🤍</button>
                 </div>
             </div>
-            <div class="box">
-                <h3>Feedback Loop</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aut vel excepturi inventore tempora exercitationem!</p>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum alias vitae nam, eum qui illo!</p>
+
+            <div class="calendarHolder">
+                <input type="text" id="forDate" placeholder="Pick a date">
+                <button class="btn-evt">Add an event</button>
             </div>
         </div>
-        <div class="weatherInfo">
-            <section class="card news">
-                <h2>Weather News</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, atque at ad eaque dolore dolorem magni cum? Ducimus debitis animi voluptas, aspernatur dicta, dignissimos rerum esse est eveniet laudantium ipsam quidem accusamus id veritatis temporibus maiores quis. Perferendis nisi a quod aspernatur consequuntur accusamus voluptates velit enim? Blanditiis, quod laborum!</p>
-            </section>
-            <section class="box">
-                <h3>Favorite places</h3>
-                <ul>
-                    <li><a href="">Lagos</a></li>
-                    <li><a href="">Abuja</a></li>
-                </ul>
-            </section>
+
+        <div class="box">
+            <h3>Feedback</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aut vel excepturi inventore tempora
+                exercitationem!</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum alias vitae nam, eum qui illo!</p>
         </div>
-    </main>
+    </div>
+
+    <div class="weatherInfo">
+        <section class="card news">
+            <h2>Weather News</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, atque at ad eaque dolore dolorem magni
+                cum? Ducimus debitis animi voluptas, aspernatur dicta, dignissimos rerum esse est eveniet laudantium
+                ipsam quidem accusamus id veritatis temporibus maiores quis. Perferendis nisi a quod aspernatur
+                consequuntur accusamus voluptates velit enim? Blanditiis, quod laborum!</p>
+        </section>
+        <section class="box">
+            <h3>Favorite places</h3>
+            <ul>
+                <li><a href="">Lagos</a></li>
+                <li><a href="">Abuja</a></li>
+            </ul>
+        </section>
+    </div>
+
+</main>
 {% endblock %}
+
