@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# install all dependencies to run database 
+
+# Install MySQL
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y mysql-server
+
+# install SQLAlchemy
+pip install sqlalchemy
+
+# install MySQL Connector
+pip install mysql-connector-python
