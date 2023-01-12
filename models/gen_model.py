@@ -52,5 +52,6 @@ class GenModel():
 
     def __str__(self):
         """string representation of class """
-        return "[{:s}] with identity number: ({:s})\n{}\n{}".format(
-               self.__class__.__name__, self.id, '*' * 70, self.__dict__)
+        return "[{:s}] with identity number: ({:s})\n{}\n{}\n{}".format(
+               self.__class__.__name__, self.id, '*' * 75, self.__dict__,
+               '*' * 75)
