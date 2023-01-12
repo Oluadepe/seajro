@@ -11,7 +11,9 @@ class Favourite(GenModel, Base):
     country = Column(String(60), nullable=False)
     state = Column(String(60), nullable=False)
     city = Column(String(60), nullable=False)
-    user_email = Column(String(60), ForeignKey('users.email'), nullable=False)
+    user_email = Column(String(60),
+                        ForeignKey('users.email', ondelete="CASCADE",
+                                   onupdate="CASCADE"), nullable=False)
 
     def __init__(self, *arg, **kwargs):
         """initializes Favourite"""
