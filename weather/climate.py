@@ -11,7 +11,7 @@ def current(lon, lat):
     params = {'lat': lat, 'lon': lon, 'key': api_key}
     req = requests.get(url, params=params).json()
     dict_ = {}
-    dict_['description'] = req['data'][0]['weather']['description']
+    dict_['description'] = req['data'][0]['weather']['description'] + '.'
     dict_['city_name'] = req['data'][0]['city_name']
     dict_['country_code'] = req['data'][0]['country_code']
     dict_['temp'] = req['data'][0]['temp']
