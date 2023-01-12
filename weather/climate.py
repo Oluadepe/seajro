@@ -7,7 +7,7 @@ def current(lon, lat):
     """ fetch current weather data """
     headers = {'User-Agent': 'SEAJRO_WEATHER_APP'}
     api_key = getenv('SEAJRO_WEATHER_API')
-    url = 'https://api.weatherbit.io/v2.0/current'
+    url = getenv('SEAJRO_CURRENT_URL')
     params = {'lat': lat, 'lon': lon, 'key': api_key}
     req = requests.get(url, params=params).json()
     return req
@@ -20,7 +20,7 @@ def forecast(city, country, days):
             city:    city to query weather data for
     """
     api_key = getenv('SEAJRO_API')
-    url = 'https://api.weatherbit.io/v2.0/forecast/daily'
+    url = getenv('SEAJRO_FORECAST_URL')
     params = {'city': city, 'country': country, 'days': days}
     req = requests.get(url, params=params).json()
     req = req['data']
