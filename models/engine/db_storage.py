@@ -4,12 +4,12 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import create_engine
 from models.gen_model import GenModel, Base
 from models.favourite import Favourite
-from models.user import User
+from models.user import User, Event
 from models.feedback import Feedback
 from os import getenv
 
 
-classes = {'Favourite': Favourite, 'Feedback': Feedback, 'User': User}
+classes = {'Favourite': Favourite, 'Feedback': Feedback, 'User': User, 'Event': Event}
 
 
 class DBStorage:
@@ -95,12 +95,15 @@ class DBStorage:
     def retrieve(self, user_cls, email):
         """ get user object by email """
         if type(user_cls) is str:
-            user_cls = eval(User)
+            user_cls = eval('user_cls')
         dic = {}
-        obj = self.__session.query(user).filter_by(email=email).first()
-        key = obj.__class__.__name__ + '.' + obj.id
-        dic[key] = obj
-        return dic
+        try:
+            obj = self.__session.query(User).filter_by(email=email).first()
+            key = obj.__class__.__name__ + '.' + obj.id
+            dic[key] = obj
+            return dic
+        except Exception:
+            return None
 
     def close(self):
         """ close the session """
