@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-""" """
-from flask_login import LoginManager
+""" Manages application routes. """
 from flask import Flask, redirect, url_for, request, session, render_template
-from flask import flash, login_required
+from flask import flash
 from datetime import datetime
 from models.favourite import Favourite
 from models.feedback import Feedback
@@ -26,19 +25,18 @@ def close(exception):
 
 @app.route('/')
 def home():
-    if session['logged_in'] is not True:
-        render_template('index.html')
+    if 'logged_in' not in session:
+        return render_template('index.html')
     else:
-        user = list(storage.retrieve(User, session['email']).values())[0]
+        email = session['email']
+        user = list(storage.retrieve(User, email).values())[0]
         events = []
         for ev in user.events:
             dic = {}
             dic['title'] = ev.title
             dic['date'] = ev.date
             events.append(dic)
-
-        #
-        return render_template('index.html', events=events)
+        return render_template('index.html')
 
 
 @app.route('/signup', methods=['GET', 'POST'])
@@ -72,16 +70,16 @@ def signup():
     return redirect(url_for('signin'))
 
 
-@app.route('/signin', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def signin():
     """ User Authentication """
-    if session['logged_in'] is not True and request.method == 'POST':
+    if 'logged_in' not in session and request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
         password = hashlib.md5(password.encode()).hexdigest()
         user = storage.retrieve(User, email).values()
         user = list(user)
-        if user[0]['password'] == password:
+        if user[0].password == password:
             session['logged_in'] = True
             session['email'] = email
             flash('You have been logged in')
@@ -91,23 +89,22 @@ def signin():
             msg = msg + ' with us yet!.'
             flash(msg)
             return redirect(url_for('signin'))
-    elif session['logged_in'] is True:
+    elif 'logged_in' in session:
         flash('You are already logged in', 'info')
         return redirect(url_for('user'))
     else:
-        render_template('login.html')
+        return render_template('login.html')
 
 
 @app.route('/user')
 #@csrf_protect
-@login_required
+#@login_required
 def user():
     return 'User Landing Page/Dashboard'
 
 
 @app.route('/user/schedule', methods=['POST'])
 #@csrf_protect
-@login_required
 def schedule():
     user_event = request.json
     date = user_event['date']
@@ -128,7 +125,7 @@ def schedule():
 
 @app.route('/signout', methods=['GET'])
 #@csrf_protect
-@login_required
+
 def signout():
     session.pop('logged_in', None)
     flash('You have been logged out', 'info')
