@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ Manages application routes. """
 from flask import Flask, redirect, url_for, request, session, render_template
-from flask import flash
+from weather.climate import current
+from flask import flash, jsonify
 from datetime import datetime
 from models.favourite import Favourite
 from models.feedback import Feedback
@@ -23,11 +24,11 @@ def close(exception):
     storage.close()
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    if 'logged_in' not in session:
+    if 'logged_in' not in session and request.method == 'GET':
         return render_template('index.html')
-    else:
+    elif 'logged_in' in session and request.method == 'GET':
         email = session['email']
         user = list(storage.retrieve(User, email).values())[0]
         events = []
@@ -37,6 +38,11 @@ def home():
             dic['date'] = ev.date
             events.append(dic)
         return render_template('index.html')
+    else:
+        lon = request.json['lon']
+        lat = request.json['lat']
+        details = current(lon=lon, lat=lat)
+        return jsonify(details)
 
 
 @app.route('/signup', methods=['GET', 'POST'])

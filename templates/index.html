@@ -5,7 +5,7 @@
     <div class="weatherData">
         <div class="card info">
             <div class="places">
-                <p>Lagos, Nigeria</p>
+		<p><span id="city_name">City</span>, <span id="country_code">Country</span></p>
                 <div class="options">
                     <select name="dataInfo" id="dataInfo">
                         <option value="Temperature">Temperature</option>
@@ -15,12 +15,15 @@
                     <p id="time"></p>
                 </div>
                 <div class="temp-box">
-                    <h1 class="temp">27 º</h1>
+			<h1><span id="temp">0</span> <span id="degree">ºC</span></h1>
                     <div class="temp-btn">
                         <button>C</button>
                         <button>F</button>
                     </div>
                 </div>
+		<div>
+		    <p><b><span id="status">Weather status: </span></b><span id="weather-desc">reload page if whether info doe not show.</span></p>
+		</div>
                 <div class="rate">
                     <p>31 <i class="ri-arrow-up-line"></i></p>
                     <p>25 <i class="ri-arrow-down-line"></i></p>
