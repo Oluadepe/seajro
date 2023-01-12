@@ -19,11 +19,14 @@
 
       <!-- This is the begining of the registration form labels -->
       <form action="#" method="post">
-        <input class="text" type="text" name="first_name" placeholder="First Name" required="">
-        <input class="lastname" type="text" name="last_name" placeholder="Last Name" required="">
-        <input class="text email" type="email" name="email" placeholder="Email" required="">
-        <input class="text" type="password" name="password" placeholder="Password" required="">
-        <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
+        <input class="text" type="text" name="first_name" placeholder="First Name" required>
+        <input class="lastname" type="text" name="last_name" placeholder="Last Name" required>
+        <input class="text email" type="email" name="email" placeholder="Email" required>
+	<input class='text' type='text' name="country" placeholder="Your Country" required><br>
+	<input class='text' type='text' name="state" placeholder="Your State" required><br>
+	<input class='text' type='text' name="city" placeholder="Your City" required><br>
+        <input class="text" type="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="password must contain atleast one uppercase, lowercase letters and a number. password must be 6 or more characters." required>
+        <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must be same with your first inputed password!" required/>
 
         <div class="wthree-text">
           <label class="anim">
