@@ -65,9 +65,14 @@ nav, .temp-box, .rate,
     display: flex;
 }
 
+#event-form {
+    text-align: center;
+}
+
 .calendarHolder {
     flex-direction: column;
     width: 100%;
+    justify-content: center;
 }
 
 .temp-btn {
