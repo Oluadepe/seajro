@@ -2,6 +2,15 @@
 
 {% block content %}
 <main>
+    <div class="flash-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
     <div class="weatherData">
         <div class="card info">
             <div class="places">
@@ -35,7 +44,7 @@
             </div>
 
             <div class="calendarHolder">
-		<form id="event-form">
+		<form action="/user/schedule" id="event-form" method='post'>
 			<h3>Have you any important event/schedule?</h3>
 			<hr>
 			<input class="inpt" type='text' name='title' placeholder='Event title' required>
@@ -43,8 +52,8 @@
 			<input class="inpt"type='text' name='state' placeholder='Event state' required>
 			<input class="inpt" type='text' name='city' placeholder='Event city' required>
 			<input class="inpt" type="text" name='date' id="forDate" placeholder="Pick a date">
-			<hr><br>
-		</form>	<input type='submit' value="Add Event" class="btn-evt">
+			<hr>
+			<button type='submit' class="btn-evt">Add Event!</button>
             </div>
         </div>
 
