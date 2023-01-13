@@ -89,7 +89,7 @@ def signin():
             session['logged_in'] = True
             session['email'] = email
             flash('You have been logged in')
-            return redirect(url_for('user'))
+            return redirect(url_for('home'))
         else:
             msg = "wrong password or email, perhaps you don't have an account"
             msg = msg + ' with us yet!.'
@@ -112,21 +112,24 @@ def user():
 @app.route('/user/schedule', methods=['POST'])
 #@csrf_protect
 def schedule():
-    user_event = request.json
-    date = user_event['date']
-    date = datetime.strptime(date, '%Y-%m-%d').date()
-    title = user_event['title']
-    country = user_event['country']
-    city = user_event['city']
-    state = user_event['state']
-    user = storage.retrieve(User, session['email']).values()
-    user = list(user)[0]
-    event = Event(title=title, date=date, country=country, city=city,
-                  state=state, User=user)
-    storage.new(event)
-    storage.save()
-    flash('Successfully added an event!')
-    return redirect(url_for('home'))
+    if 'logged_in' in session:
+        date = request.form['date']
+        date = datetime.strptime(date, '%Y-%m-%d').date()
+        title = request.form['title']
+        country = request.form['country']
+        city = request.form['city']
+        state = request.form['state']
+        user = storage.retrieve(User, session['email']).values()
+        user = list(user)[0]
+        event = Event(title=title, date=date, country=country, city=city,
+                      state=state, User=user)
+        storage.new(event)
+        storage.save()
+        flash('Successfully added an event!', 'info')
+        return redirect(url_for('home'))
+    else:
+        flash('You have to log in before you can add events', 'info')
+        return redirect(url_for('home'))
 
 
 @app.route('/signout', methods=['GET'])

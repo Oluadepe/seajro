@@ -65,9 +65,29 @@ nav, .temp-box, .rate,
     display: flex;
 }
 
+.flash-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.flash-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#event-form {
+    text-align: center;
+}
+
 .calendarHolder {
     flex-direction: column;
     width: 100%;
+    justify-content: center;
 }
 
 .temp-btn {

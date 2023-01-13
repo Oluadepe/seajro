@@ -3,7 +3,7 @@
 const logo = document.getElementsByClassName('logo');
 
 async function getWeather() {
-    const response = await fetch('https://ipwhois.app/json/');
+    const response = await fetch('https://ipwho.is');
     const data = await response.json();
     const lat = data.latitude;
     const lon = data.longitude;
