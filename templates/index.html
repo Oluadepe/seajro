@@ -35,26 +35,32 @@
             </div>
 
             <div class="calendarHolder">
-                <input type="text" id="forDate" placeholder="Pick a date">
-                <button class="btn-evt">Add an event</button>
+		<form id="event-form">
+			<h3>Have you any important event/schedule?</h3>
+			<hr>
+			<input class="inpt" type='text' name='title' placeholder='Event title' required>
+			<input class="inpt" type='text' name='country' placeholder='Event country' required>
+			<input class="inpt"type='text' name='state' placeholder='Event state' required>
+			<input class="inpt" type='text' name='city' placeholder='Event city' required>
+			<input class="inpt" type="text" name='date' id="forDate" placeholder="Pick a date">
+			<hr><br>
+		</form>	<input type='submit' value="Add Event" class="btn-evt">
             </div>
         </div>
 
         <div class="box">
             <h3>Feedback</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus aut vel excepturi inventore tempora
-                exercitationem!</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum alias vitae nam, eum qui illo!</p>
+	    <p><b>Ayomide</b>: What a cool service!.</p>
+	    <p><b>Gabriel</b>: Will I receive weather forecast email if I add an event?.</p>
         </div>
     </div>
 
     <div class="weatherInfo">
         <section class="card news">
             <h2>Weather News</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, atque at ad eaque dolore dolorem magni
-                cum? Ducimus debitis animi voluptas, aspernatur dicta, dignissimos rerum esse est eveniet laudantium
-                ipsam quidem accusamus id veritatis temporibus maiores quis. Perferendis nisi a quod aspernatur
-                consequuntur accusamus voluptates velit enim? Blanditiis, quod laborum!</p>
+	    <h3>Severe Storms To Blast Tennessee Valley To Southeast</h3>
+	    <p>A potent low pressure system will move from the Mid-Mississippi Valley into the northern Mid-Atlantic, dragging an associated cold front through the Tennessee Valley, Deep South and Southeast. This cold front separates very warm, humid air from the Gulf of Mexico streaming northward ahead of the front with colder, drier air filtering in behind the front. The collision of air masses will be where thunderstorms fire up through this afternoon and evening.</p>
+	    <p>The severe weather danger zones as of now are over the Tennessee Valley and Deep South, including parts of Kentucky, Tennessee, Ohio and West Virginia as well as Mississippi, Alabama, Georgia, the Carolinas and the Florida Panhandle, where two lines of strong to severe thunderstorms are moving through. The primary threats include scattered damaging wind gusts to 70 mph, scattered large hail to 1.5 inches in diameter and a few brief tornadoes...<a href='#'>read more</a></p>
         </section>
         <section class="box">
             <h3>Favorite places</h3>
