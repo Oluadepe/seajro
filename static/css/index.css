@@ -65,12 +65,26 @@ nav, .temp-box, .rate,
     display: flex;
 }
 
-.calendarHolder,
-.temp-btn {
+.calendarHolder {
     flex-direction: column;
+    width: 100%;
 }
 
-button {
+.temp-btn {
+    flex-direction: column;
+   }
+
+.inpt {
+    width: 100%;
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button,
+input.btn-evt {
     background-color: #0d6efd;
     padding: 1em;
     border: 0;
